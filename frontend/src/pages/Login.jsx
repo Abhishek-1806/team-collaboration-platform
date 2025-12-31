@@ -34,7 +34,7 @@ const Login = () => {
       // const response = await api.post('/login', formData);
       // Save user info or token and navigate to dashboard
       const response = await axios.post('/api/auth/login', formData);      
-      localStorage.setItem('token', response.data.token);
+      sessionStorage.setItem('token', response.data.token);
       navigate('/dashboard', {replace: true});
     } catch (err) {
       console.error(err);
